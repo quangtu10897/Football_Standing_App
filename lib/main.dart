@@ -1,8 +1,4 @@
 import 'models/football.dart';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
-import 'models/data.dart';
-import 'dart:async';
 import 'fetchData.dart';
 
 
