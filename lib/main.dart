@@ -1,6 +1,9 @@
 
 
+
+
 import 'package:flutter/material.dart';
+import 'package:project_flutter/screens/chartScreen.dart';
 import 'package:project_flutter/screens/detailsSreen.dart';
 import 'package:project_flutter/screens/homeScreen.dart';
 
@@ -9,9 +12,7 @@ void main() {
     initialRoute: '/homeScreen',
     routes: {
       '/homeScreen': (context) => HomeScreen(),
-      // '/detailsScreen': ((context) => DetailsScreen(
-      //       name: '',
-      //     )),
+      '/chartScreen': (context) => ChartScreen(),
       
     },
   ));

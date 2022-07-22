@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 0,
       ),
       body: FutureBuilder<List<Football>>(
-          future: fetchData(),
+          future: fetchData('2021'),
           builder: (context, snapshot) {
             if (snapshot.hasError) {
               return const Center(
@@ -92,6 +92,47 @@ class FootBallList extends StatelessWidget {
                                   .team
                                   .logo[0]
                                   .href,
+                              points: lstFootball[0]
+                                  .data
+                                  .standings![index]
+                                  .stats![6]
+                                  .value,
+                              goals: lstFootball[0]
+                                  .data
+                                  .standings![index]
+                                  .stats![4]
+                                  .value,
+                              ties: lstFootball[0]
+                                  .data
+                                  .standings![index]
+                                  .stats![2]
+                                  .value,
+                              wins: lstFootball[0]
+                                  .data
+                                  .standings![index]
+                                  .stats![0]
+                                  .value,
+                              loss: lstFootball[0]
+                                  .data
+                                  .standings![index]
+                                  .stats![1]
+                                  .value,
+                              rank: lstFootball[0]
+                                  .data
+                                  .standings![index]
+                                  .stats![8]
+                                  .value,
+                              goalConceded: lstFootball[0]
+                                  .data
+                                  .standings![index]
+                                  .stats![5]
+                                  .value,
+                              goalDif: lstFootball[0]
+                                  .data
+                                  .standings![index]
+                                  .stats![9]
+                                  .value,
+                              season: lstFootball[0].data.season,
                             ),
                           ));
                     },
