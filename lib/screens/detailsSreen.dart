@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_flutter/screens/chartScreen.dart';
 
 class DetailsScreen extends StatefulWidget {
   final String name;
@@ -36,12 +37,12 @@ class _DetailsScreenState extends State<DetailsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Details Screen'),
+        title: const Text('Details Screen'),
         backgroundColor: Colors.blue[700],
         elevation: 0,
       ),
       body: Padding(
-        padding: EdgeInsets.fromLTRB(10.0, 40.0, 10.0, 0.0),
+        padding: const EdgeInsets.fromLTRB(10.0, 40.0, 10.0, 0.0),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Center(
             child: CircleAvatar(
@@ -55,14 +56,14 @@ class _DetailsScreenState extends State<DetailsScreen> {
           ),
           Center(
             child: Text(
-              '${widget.season}',
+              'Season ${widget.season}',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 40,
           ),
           Padding(
@@ -204,7 +205,15 @@ class _DetailsScreenState extends State<DetailsScreen> {
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             InkWell(
               onTap: () {
-                Navigator.pushNamed(context, '/chartScreen');
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => ChartScreen(
+                              wins: widget.wins,
+                              loss: widget.loss,
+                              ties: widget.ties,
+                              logo: widget.href,
+                            )));
               },
               child: Container(
                 child: Center(child: Text("Next")),
