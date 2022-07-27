@@ -12,6 +12,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  String dropdownValue = '2021';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,21 +24,56 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.blue[700],
         elevation: 0,
       ),
-      body: FutureBuilder<List<Football>>(
-          future: fetchData('2021'),
-          builder: (context, snapshot) {
-            if (snapshot.hasError) {
-              return const Center(
-                child: Text('An error has occurred!'),
+      body: Column(
+        children: [
+          Text(
+            "Seasons",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          DropdownButton<String>(
+            value: dropdownValue,
+            icon: const Icon(Icons.arrow_downward),
+            elevation: 0,
+            style: const TextStyle(color: Colors.deepPurple),
+            underline: Container(
+              height: 2,
+              color: Colors.deepPurpleAccent,
+            ),
+            onChanged: (String? newValue) {
+              setState(() {
+                dropdownValue = newValue!;
+              });
+            },
+            items: <String>['2021', '2020', '2019', '2018', '2017', '2016']
+                .map<DropdownMenuItem<String>>((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(value),
               );
-            } else if (snapshot.hasData) {
-              return FootBallList(lstFootball: snapshot.data!);
-            } else {
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
-            }
-          }),
+            }).toList(),
+          ),
+          Expanded(
+            child: FutureBuilder<List<Football>>(
+                future: fetchData(dropdownValue),
+                builder: (context, snapshot) {
+                  if (snapshot.hasError) {
+                    return const Center(
+                      child: Text('An error has occurred!'),
+                    );
+                  } else if (snapshot.hasData) {
+                    return FootBallList(lstFootball: snapshot.data!);
+                  } else {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                }),
+          ),
+        ],
+      ),
     );
   }
 }
