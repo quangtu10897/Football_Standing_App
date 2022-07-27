@@ -1,4 +1,3 @@
-import 'standing.dart';
 import 'data.dart';
 
 class Football {
@@ -12,4 +11,3 @@ class Football {
     );
   }
 }
-

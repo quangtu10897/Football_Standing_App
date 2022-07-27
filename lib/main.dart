@@ -1,14 +1,19 @@
-import 'models/football.dart';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
-import 'models/data.dart';
-import 'dart:async';
-import 'fetchData.dart';
 
 
-void main() async {
-  List<Football> listFootball = await fetchData();
-  for (int i = 0; i < listFootball[0].data.standings!.length; i++) {
-    print(listFootball[0].data.standings![i].team.name+'===>'+listFootball[0].data.standings![i].team.logo[0].href);
-    }
+import 'package:flutter/material.dart';
+import 'package:project_flutter/screens/detailsSreen.dart';
+import 'package:project_flutter/screens/homeScreen.dart';
+
+void main() {
+  runApp(MaterialApp(
+    initialRoute: '/homeScreen',
+    routes: {
+      '/homeScreen': (context) => HomeScreen(),
+      // '/detailsScreen': ((context) => DetailsScreen(
+      //       name: '',
+      //     )),
+      
+    },
+  ));
+  
 }
