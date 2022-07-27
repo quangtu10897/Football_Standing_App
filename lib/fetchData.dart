@@ -4,11 +4,11 @@ import 'package:http/http.dart' as http;
 
 import 'dart:async';
 
-Future<List<Football>> fetchData() async {
+Future<List<Football>> fetchData(String url) async {
   var client = http.Client();
   List<Football> lstFootball = [];
   var apiStanding =
-      "https://api-football-standings.azharimm.site/leagues/eng.1/standings?season=2020";
+      "https://api-football-standings.azharimm.site/leagues/eng.1/standings?season=$url";
   try {
     var response = await client.get(Uri.parse(apiStanding));
     var fbs = Football.fromJson(jsonDecode(response.body));
