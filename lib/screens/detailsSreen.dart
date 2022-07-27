@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_flutter/screens/chartScreen.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class DetailsScreen extends StatefulWidget {
   final String name;
@@ -37,7 +38,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Details Screen'),
+        title: Text(tr('Details Screen')),
         backgroundColor: Colors.blue[700],
         elevation: 0,
       ),
@@ -56,7 +57,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
           ),
           Center(
             child: Text(
-              'Season ${widget.season}',
+              '${tr('Seasons')} ${widget.season}',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -72,7 +73,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
               children: [
                 TableRow(children: [
                   Text(
-                    'Name :',
+                    '${tr('Name')} :',
                     style: TextStyle(
                       fontSize: 20,
                     ),
@@ -86,7 +87,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 ]),
                 TableRow(children: [
                   Text(
-                    'Rank :',
+                    '${tr('Rank')} :',
                     style: TextStyle(
                       fontSize: 20,
                     ),
@@ -100,7 +101,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 ]),
                 TableRow(children: [
                   Text(
-                    'Points :',
+                    '${tr('Points')} :',
                     style: TextStyle(
                       fontSize: 20,
                     ),
@@ -114,7 +115,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 ]),
                 TableRow(children: [
                   Text(
-                    'Goals :',
+                    '${tr('Goals')} :',
                     style: TextStyle(
                       fontSize: 20,
                     ),
@@ -128,7 +129,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 ]),
                 TableRow(children: [
                   Text(
-                    'GoalConceded :',
+                    '${tr('GoalConceded')} :',
                     style: TextStyle(
                       fontSize: 20,
                     ),
@@ -142,7 +143,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 ]),
                 TableRow(children: [
                   Text(
-                    'GoalDif :',
+                    '${tr('GoalDif')} :',
                     style: TextStyle(
                       fontSize: 20,
                     ),
@@ -156,7 +157,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 ]),
                 TableRow(children: [
                   Text(
-                    'Wins :',
+                    '${tr('Wins')} :',
                     style: TextStyle(
                       fontSize: 20,
                     ),
@@ -170,7 +171,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 ]),
                 TableRow(children: [
                   Text(
-                    'Loss :',
+                    '${tr('Loss')} :',
                     style: TextStyle(
                       fontSize: 20,
                     ),
@@ -184,7 +185,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 ]),
                 TableRow(children: [
                   Text(
-                    'Ties :',
+                    '${tr('Ties')} :',
                     style: TextStyle(
                       fontSize: 20,
                     ),
@@ -216,7 +217,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                             )));
               },
               child: Container(
-                child: Center(child: Text("Next")),
+                child: Center(child: Text(tr("Next"))),
                 height: 56,
                 width: 240,
                 decoration: BoxDecoration(
