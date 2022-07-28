@@ -1,6 +1,5 @@
-import 'stats.dart';
 import 'team.dart';
-import 'note.dart';
+
 
 class Standing {
   final Team team;
@@ -16,5 +15,23 @@ class Standing {
       note: json['note'] != null ? Note.fromJson(json['note']) : null,
       stats: listStats.map<Stats>((item) => Stats.fromJson(item)).toList(),
     );
+  }
+}
+class Stats {
+  final String name;
+  final dynamic value;
+  Stats({required this.name, required this.value});
+
+  factory Stats.fromJson(Map<String, dynamic> json) {
+    return Stats(name: json['name'], value: json['value']);
+  }
+}
+
+class Note {
+  final int rank;
+  Note({required this.rank});
+
+  factory Note.fromJson(Map<String, dynamic> json) {
+    return (Note(rank: json['rank']));
   }
 }

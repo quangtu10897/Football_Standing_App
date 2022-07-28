@@ -35,8 +35,7 @@ class _MyAppState extends State<MyApp> {
       routes: {
         '/homeScreen': (context) => HomeScreen(),
         '/navigator': (context) => NavigatorScreen(),
-        //'/chartScreen': (context) => ChartScreen(),
-      },
+        },
     );
   }
 }

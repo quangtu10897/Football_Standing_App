@@ -1,7 +1,3 @@
-
-
-import 'logo.dart';
-
 class Team {
   final String name;
   final String shortName;
@@ -16,6 +12,18 @@ class Team {
       name: json['name'],
       shortName: json['shortDisplayName'],
       logo: listLogo.map<Logo>((item) => Logo.fromJson(item)).toList(),
+    );
+  }
+}
+
+class Logo {
+  final String href;
+
+  Logo({required this.href});
+
+  factory Logo.fromJson(Map<String, dynamic> json) {
+    return Logo(
+      href: json['href'],
     );
   }
 }

@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:project_flutter/screens/homeScreen.dart';
 import 'package:project_flutter/screens/language_screen.dart';
