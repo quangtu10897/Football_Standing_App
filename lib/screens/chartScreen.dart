@@ -1,6 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:project_flutter/indicator.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class ChartScreen extends StatefulWidget {
   final int wins;
@@ -25,7 +26,7 @@ class _ChartScreenState extends State<ChartScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Stats Chart'),
+        title: Text(tr('Stats Chart')),
         backgroundColor: Colors.blue[700],
       ),
       body: Container(
@@ -44,7 +45,7 @@ class _ChartScreenState extends State<ChartScreen> {
               height: 50,
             ),
             Text(
-              "Win-loss ratio",
+              tr("Win-loss ratio"),
               style: TextStyle(fontSize: 20, color: Colors.black),
             ),
             Expanded(
